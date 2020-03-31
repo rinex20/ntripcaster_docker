@@ -1,4 +1,6 @@
-FROM alpine:latest
+FROM ubuntu:18.04
+
+ENV ver=2.0
 LABEL maintainer="Jacky <cheungyong@gmail.com>"
 
 WORKDIR /root
