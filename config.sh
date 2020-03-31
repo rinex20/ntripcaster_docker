@@ -1,9 +1,12 @@
 #!/bin/sh
 
 echo "Downloading configuration example files..."
-cd ~
-wget https://raw.githubusercontent.com/rinex20/ntripcaster_docker/master/conf.zip
-mkdir -p /etc/ntripcaster
-echo "Unzip configuration files..."
-unzip conf.zip -d /etc/ntripcaster
-clear && ls /etc/ntripcaster/conf
+mkdir -p /etc/ntripcaster/conf
+wget -P /etc/ntripcaster/conf https://raw.githubusercontent.com/rinex20/ntripcaster_docker/master/conf/users.aut
+wget -P /etc/ntripcaster/conf https://raw.githubusercontent.com/rinex20/ntripcaster_docker/master/conf/groups.aut
+wget -P /etc/ntripcaster/conf https://raw.githubusercontent.com/rinex20/ntripcaster_docker/master/conf/clientmounts.aut
+wget -P /etc/ntripcaster/conf https://raw.githubusercontent.com/rinex20/ntripcaster_docker/master/conf/sourcemounts.aut
+wget -P /etc/ntripcaster/conf https://raw.githubusercontent.com/rinex20/ntripcaster_docker/master/conf/sourcetable.dat
+wget -P /etc/ntripcaster/conf https://raw.githubusercontent.com/rinex20/ntripcaster_docker/master/conf/ntripcaster.conf
+
+ls /etc/ntripcaster/conf
