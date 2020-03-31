@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM alphine:latest
 
 ENV ver=1.0
 LABEL maintainer="Jacky <cheungyong@gmail.com>"
