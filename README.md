@@ -13,7 +13,7 @@ $ chmod +x config.sh && ./config.sh
 
 then config ntripcaster.conf and other users or group, sourcetable files.
 ```shell
-$ vim /etc/ntripcaster/conf/ntripcaster.conf
+$ vim /etc/ntripcaster/ntripcaster.conf
 ```
 
 ## Start container
