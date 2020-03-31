@@ -6,7 +6,7 @@ LABEL maintainer="Jacky <cheungyong@gmail.com>"
 WORKDIR /root
 COPY ntripcaster.tar.gz /root
 RUN set -ex \
-	&& mkdir -p /etc/ntripcaster \
+	&& mkdir -p /etc/ntripcaster/conf \
 	&& tar -zxvf ntripcaster.tar.gz -C / \
 	&& chmod +x /usr/local/bin/ntripcaster/bin/ntripcaster \
 	&& chmod +x /usr/local/bin/ntripcaster/bin/casterwatch \
