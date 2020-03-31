@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
 
-ENV ver=2.0
+ENV ver=1.0
 LABEL maintainer="Jacky <cheungyong@gmail.com>"
 
 WORKDIR /root
@@ -12,5 +12,6 @@ RUN set -ex \
 	&& chmod +x /usr/local/bin/ntripcaster/bin/casterwatch \
 	&& chmod +x /usr/local/bin/ntripcaster/sbin/ntripdaemon 
 
+EXPOSE 2101
 VOLUME /etc/ntripcaster
-CMD [ "/usr/local/bin/ntripcaster/sbin/ntripdaemon", "-d", "/etc/ntripcaster" ]
+CMD [ "/usr/local/bin/ntripcaster/sbin/ntripdaemon", "-d", "/etc/ntripcaster/conf" ]
