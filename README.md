@@ -3,7 +3,7 @@
 ## Prepare for configuration
 You must prepare for some configuration in host at first:
 ```shell
-$ wget https://raw.githubusercontent.com/datagnss/ntripcaster_docker/master/config.sh
+$ wget -O config.sh https://raw.githubusercontent.com/rinex20/ntripcaster_docker/master/config.sh
 ```
 
 Then :
