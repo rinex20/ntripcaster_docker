@@ -9,4 +9,4 @@ wget -P /etc/ntripcaster/conf https://raw.githubusercontent.com/rinex20/ntripcas
 wget -P /etc/ntripcaster/conf https://raw.githubusercontent.com/rinex20/ntripcaster_docker/master/conf/sourcetable.dat
 wget -P /etc/ntripcaster/conf https://raw.githubusercontent.com/rinex20/ntripcaster_docker/master/conf/ntripcaster.conf
 
-ls /etc/ntripcaster/conf
+ls -l /etc/ntripcaster/conf
