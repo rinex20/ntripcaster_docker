@@ -19,5 +19,5 @@ $ vim /etc/ntripcaster/conf/ntripcaster.conf
 ## Start container
 The following is an example to start a container that listens on port 2101, run as a ntripcaster like below:
 ```shell
-$ docker run -d -p 8080:8080 --name ntripcaster --restart=always -v /etc/ntripcaster/conf:/etc/ntripcaster rinex20/ntripcaster
+$ docker run -d -p 2101:2101 --name ntripcaster --restart=always -v /etc/ntripcaster/conf:/etc/ntripcaster rinex20/ntripcaster
 ```
