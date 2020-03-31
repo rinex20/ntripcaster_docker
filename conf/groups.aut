@@ -1,0 +1,20 @@
+# Group authentication file.
+# Here you list all groups and their members (users), one line per
+# group.
+#
+# Syntax: <GROUP>:<USER1>,<USER2>,...,<USERn>[:<MAX_NUM_CON>]
+#
+# <GROUP>: name of the group.
+# <USERi>: name of user belonging to <GROUP>.
+# <MAX_NUM_CON>: optional specification of maximal number of
+# simultaneous connections for <GROUP>. If not specified, an
+# infinite number of connections will be allowed.
+
+#normal user group
+gpsclient:gps1,gps2,gps3,gps4,gps5,gps6
+
+#uploader group
+uploader:uploader0,uploader1
+
+#administrations group
+FirstAdmin:admin
