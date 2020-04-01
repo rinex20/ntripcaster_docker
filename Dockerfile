@@ -8,11 +8,12 @@ COPY ntripcaster.tar.gz /root
 RUN set -ex \
 	&& mkdir -p /etc/ntripcaster \
 	&& tar -zxvf ntripcaster.tar.gz -C / \
-	&& mv -t /usr/local/bin/ntripcaster ../ \
+	&& cp -R /usr/local/bin/ntripcaster /usr/local/ \
 	&& chmod +x /usr/local/ntripcaster/bin/ntripcaster \
 	&& chmod +x /usr/local/ntripcaster/bin/casterwatch \
 	&& chmod +x /usr/local/ntripcaster/sbin/ntripdaemon \
-	&& rm -f /root/ntripcaster.tar.gz
+	&& rm -f /root/ntripcaster.tar.gz \
+	&& rm -R /usr/local/bin/ntripcaster
 
 EXPOSE 2101
 VOLUME /etc/ntripcaster
