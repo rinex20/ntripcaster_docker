@@ -10,7 +10,8 @@ RUN set -ex \
 	&& tar -zxvf ntripcaster.tar.gz -C / \
 	&& chmod +x /usr/local/bin/ntripcaster/bin/ntripcaster \
 	&& chmod +x /usr/local/bin/ntripcaster/bin/casterwatch \
-	&& chmod +x /usr/local/bin/ntripcaster/sbin/ntripdaemon 
+	&& chmod +x /usr/local/bin/ntripcaster/sbin/ntripdaemon \
+	&& rm -f /root/ntripcaster.tar.gz
 
 EXPOSE 2101
 VOLUME /etc/ntripcaster
