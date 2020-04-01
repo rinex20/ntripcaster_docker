@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM ubuntu:16.04
 
 ENV ver=1.0
 LABEL maintainer="Jacky <cheungyong@gmail.com>"
