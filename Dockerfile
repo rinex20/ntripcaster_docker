@@ -8,7 +8,7 @@ COPY ntripcaster.tar.gz /root
 RUN set -ex \
 	&& mkdir -p /etc/ntripcaster \
 	&& tar -zxvf ntripcaster.tar.gz -C / \
-	&& mv -t /usr/local/bin/ntripcaster /usr/local/
+	&& mv -t /usr/local/bin/ntripcaster /usr/local/ \
 	&& chmod +x /usr/local/ntripcaster/bin/ntripcaster \
 	&& chmod +x /usr/local/ntripcaster/bin/casterwatch \
 	&& chmod +x /usr/local/ntripcaster/sbin/ntripdaemon \
