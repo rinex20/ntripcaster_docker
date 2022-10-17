@@ -12,4 +12,6 @@ wget -O /etc/ntripcaster/sourcemounts.aut https://raw.githubusercontent.com/rine
 wget -O /etc/ntripcaster/sourcetable.dat https://raw.githubusercontent.com/rinex20/ntripcaster_docker/master/conf/sourcetable.dat
 wget -O /etc/ntripcaster/ntripcaster.conf https://raw.githubusercontent.com/rinex20/ntripcaster_docker/master/conf/ntripcaster.conf
 
+wget -O /docker/ntripcaster/docker-compose.yml https://raw.githubusercontent.com/rinex20/ntripcaster_docker/master/docker-compose.yml
+
 ls -l /etc/ntripcaster
