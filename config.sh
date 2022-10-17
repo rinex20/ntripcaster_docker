@@ -2,6 +2,9 @@
 
 echo "Downloading configuration example files..."
 mkdir -p /etc/ntripcaster
+mkdir -p /docker
+mkdir -p /docker/ntripcaster
+
 wget -O /etc/ntripcaster/users.aut https://raw.githubusercontent.com/rinex20/ntripcaster_docker/master/conf/users.aut
 wget -O /etc/ntripcaster/groups.aut https://raw.githubusercontent.com/rinex20/ntripcaster_docker/master/conf/groups.aut
 wget -O /etc/ntripcaster/clientmounts.aut https://raw.githubusercontent.com/rinex20/ntripcaster_docker/master/conf/clientmounts.aut
