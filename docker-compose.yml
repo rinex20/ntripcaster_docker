@@ -1,0 +1,9 @@
+version: "3"
+
+services:
+  ntripcaster:
+    image: rinex20/ntripcaster
+    ports:
+      - "2101:2101"
+    volumes:
+      - "/etc/ntripcaster":"/etc/ntripcaster"
