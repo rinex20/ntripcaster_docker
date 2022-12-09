@@ -1327,7 +1327,7 @@ int parse_gpgga_msg(char *gpgga_t, pos_t *position) {
                 break;
         }
     }
-    write_log(LOG_DEFAULT, "GPGGA message %d, %d\n", position->lat * 180.0 / M_PI, position->lng * 180.0 / M_PI);
+    write_log(LOG_DEFAULT, "GPGGA message %.8f, %.8f\n", position->lat * 180.0 / M_PI, position->lng * 180.0 / M_PI);
     return 0;
 }
 
