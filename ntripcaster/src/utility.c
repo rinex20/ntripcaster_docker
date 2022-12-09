@@ -1291,6 +1291,9 @@ int parse_gpgga_msg(char *gpgga_t, pos_t *position) {
     if (splitc(NULL, gpgga, '$') == NULL ){
           return -1;
     }
+	
+    write_log(LOG_DEFAULT, "GPGGA message: %s\n", gpgga);
+    
 
     if ((ice_strncmp(gpgga, "GPGGA", 5) != 0) || (ice_strncmp(gpgga, "GNGGA", 5) != 0)) {
         write_log(LOG_DEFAULT, "ERROR: Not GPGGA message: %s\n", gpgga);
