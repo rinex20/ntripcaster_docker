@@ -19,7 +19,7 @@ jobs:
       with:
         publish: true
         imageName: rinex20/ntripcaster
-        platform: linux/amd64,linux/arm64,linux/arm/v7 # 你准备构建的镜像平台
-        tag: latest # 默认latest，可以针对平台，修改tag
+        platform: linux/amd64,linux/arm64 # 你准备构建的镜像平台
+        tag: automount # 默认latest，可以针对平台，修改tag
         dockerUser: ${{ secrets.DOCKER_USERNAME }} # docker hub userid
         dockerPassword: ${{ secrets.DOCKER_PASSWORD }}
