@@ -6,9 +6,9 @@ WORKDIR /ntripcaster
 
 RUN apt-get update && apt-get install build-essential --assume-yes
 
-RUN ./configure
+RUN sudo ./configure
 
-RUN make && make install
+RUN sudo make && sudo make install
 
 # The builder image is dumped and a fresh image is used
 # just with the built binary, config and logs made from 'make install'
