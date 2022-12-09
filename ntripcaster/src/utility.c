@@ -1292,7 +1292,7 @@ int parse_gpgga_msg(char *gpgga_t, pos_t *position) {
           return -1;
     }
 
-    if (ice_strncmp(gpgga, "GPGGA", 5) != 0) {
+    if ((ice_strncmp(gpgga, "GPGGA", 5) != 0) || (ice_strncmp(gpgga, "GNGGA", 5) != 0)) {
         write_log(LOG_DEFAULT, "ERROR: Not GPGGA message: %s\n", gpgga);
         return -1;
     }
