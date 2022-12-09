@@ -16,14 +16,11 @@ RUN cd /root/ntripcaster && \
 FROM ubuntu:18.04
 ENV ver=1.1.6
 LABEL maintainer="Jacky <cheungyong@gmail.com>"
-COPY --from=builder /usr/local/ntripcaster/ /usr/local/
-RUN mkdir -p /etc/ntripcaster && \
-    ln -s /usr/local/ntripcaster/conf /etc/ntripcaster/conf && \
-    ln -s /usr/local/ntripcaster/logs /etc/ntripcaster/logs
+COPY --from=builder /usr/local/ntripcaster /ntripcaster
     
 
 EXPOSE 2101
-VOLUME /etc/ntripcaster
-WORKDIR /usr/local/ntripcaster/logs
-CMD /usr/local/ntripcaster/bin/ntripcaster
+VOLUME /ntripcaster/conf
+WORKDIR /ntripcaster/logs
+CMD /ntripcaster/bin/ntripcaster
 
