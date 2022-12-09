@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install build-essential --assume-yes
 
 RUN cd /root/ntripcaster && \
     ./configure && \
-    make &&
+    make && \
     make install
 
 # The builder image is dumped and a fresh image is used
