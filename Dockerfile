@@ -1,20 +1,28 @@
+FROM ubuntu:18.04 as builder
+
+COPY ntripcaster /ntripcaster
+
+WORKDIR /ntripcaster
+
+RUN apt-get update && apt-get install build-essential --assume-yes
+
+RUN ./configure
+
+RUN make && make install
+
+# The builder image is dumped and a fresh image is used
+# just with the built binary, config and logs made from 'make install'
 FROM ubuntu:18.04
-
-ENV ver=1.0
+ENV ver=1.1.6
 LABEL maintainer="Jacky <cheungyong@gmail.com>"
-
-WORKDIR /root
-COPY ntripcaster.tar.gz /root
-RUN set -ex \
-	&& mkdir -p /etc/ntripcaster \
-	&& tar -zxvf ntripcaster.tar.gz -C / \
-	&& cp -R /usr/local/bin/ntripcaster /usr/local/ \
-	&& chmod +x /usr/local/ntripcaster/bin/ntripcaster \
-	&& chmod +x /usr/local/ntripcaster/bin/casterwatch \
-	&& chmod +x /usr/local/ntripcaster/sbin/ntripdaemon \
-	&& rm -f /root/ntripcaster.tar.gz \
-	&& rm -R /usr/local/bin/ntripcaster
+COPY --from=builder /usr/local/ntripcaster/ /usr/local/
+RUN mkdir -p /etc/ntripcaster && \
+    ln -s /usr/local/ntripcaster/conf /etc/ntripcaster/conf && \
+    ln -s /usr/local/ntripcaster/logs /etc/ntripcaster/logs
+    
 
 EXPOSE 2101
 VOLUME /etc/ntripcaster
-CMD [ "/usr/local/ntripcaster/sbin/ntripdaemon", "-d", "/etc/ntripcaster" ]
+WORKDIR /usr/local/ntripcaster/logs
+CMD /usr/local/ntripcaster/bin/ntripcaster
+
