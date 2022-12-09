@@ -7,9 +7,9 @@ COPY ntripcaster ntripcaster
 RUN apt-get update && apt-get install build-essential --assume-yes
 
 RUN cd /root/ntripcaster && \
+    chmod +x configure && \
     ./configure && \
-    make && \
-    make install
+    make && make install
 
 # The builder image is dumped and a fresh image is used
 # just with the built binary, config and logs made from 'make install'
