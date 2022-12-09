@@ -15,7 +15,7 @@ RUN make
 FROM ubuntu:18.04
 ENV ver=1.1.16
 LABEL maintainer="Jacky <cheungyong@gmail.com>"
-COPY --from=builder /usr/local/ntripcaster/ /usr/local/ntripcaster/
+COPY --from=builder /usr/local/ntripcaster/ /usr/local/
 
 EXPOSE 2101
 WORKDIR /usr/local/ntripcaster/logs
