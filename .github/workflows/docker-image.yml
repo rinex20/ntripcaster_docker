@@ -1,11 +1,11 @@
 name: Publish image to hub
 
 on:
-#  push:
-#    branches: [ automount ]
-#  pull_request:
-#    branches: [ automount ]
-  workflow_dispatch:
+  push:
+    branches: [ automount ]
+  pull_request:
+    branches: [ automount ]
+#  workflow_dispatch:
     
 jobs:
 
